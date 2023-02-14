@@ -1,0 +1,281 @@
+#include<stdio>
+#include<stdlib>
+#include<string>
+ 
+bool redondeo(float num)
+{
+	bool r = false;
+  float tem;
+ 
+  tem = (tem = num, int(tem));
+ 
+	if(num - tem == 0)
+	   r = true;
+ 
+	return r;
+}
+void no()
+{
+	printf("La opcion no es valida, intente de nuevo...");
+}
+ 
+main()
+{
+  int n, n1;
+  float med, med1;
+  std::string m, m1;
+ 
+	printf("CONVERSOR DE UNIDADES DE LONGITUDES, VOLUMENES Y PESO, A PARTIR DE LAS OPCIONES Y MEDIDA.");
+	printf("\n\n1)PULGADAS A MILIMETROS.\n1.1.- Pulgadas a Milimetros.\n1.2.- Yardas a Metros.\n1.3.- Millas a kilometros.\n1.4.- Pulgadas a centimetros.\n1.5.- Pies a metros.\n1.6.- Yardas a metros.\n1.7.- Acre a hectareas.\n1.8.- Millas a kilometros.\n\n2)VOLUMEN.\n2.1.- Pie a metros.\n2.2.- Yardas a metros.\n2.2.- Pinta a litros.\n2.3.- Galon a litros\n\n3)PESO.\n1.3.- Onza a gramos.\n2.3.- Libra a kilogramos\n3.3.- Tonelada inglesa a tonelada.");
+	printf("\n\nIngrese OPCION 1: ");
+	scanf("%d", &n);
+  system("cls");
+ 
+  switch👎
+  {
+  	case 1:
+     {
+			printf("1)PULGADAS A MILIMETROS.\n1.- Pulgadas a Milimetros.\n2.- Yardas a Metros.\n3.- Millas a kilometros.\n4.- Pulgadas a centimetros.\n5.- Pies a metros.\n6.- Yardas a metros.\n7.- Acre a hectareas.\n8.- Millas a kilometros.\n\n");
+	 		printf("Ingrese OPCION 2: ");
+			scanf("%d", &n1);
+        printf("Ingrese MEDIDA: ");
+        scanf("%f", &med);
+        med1 = med;
+        switch(n1)
+        {
+ 
+        	case 1:
+           {
+           	med *= 25.40;
+           	m = "PULGADAS";
+              m1= "MILIMETROS";
+        	}
+           break;
+ 
+           case 2:
+           {
+           	med *= 0.9144;
+              m = "YARDAS";
+              m1= "METROS";
+        	}
+           break;
+ 
+           case 3:
+           {
+           	med *= 1.6093;
+					m = "MILLAS";
+              m1= "KILOMETROS";
+           }
+           break;
+ 
+           case 4:
+           {
+           	med *= 6.452;
+					m = "PULGADAS";
+              m1= "CENTRIMETROS";
+           }
+				break;
+ 
+           case 5:
+           {
+           	med *= 0.09290;
+					m = "PIE2";
+              m1= "METROS2";
+           }
+           break;
+ 
+           case 6:
+           {
+           	med *= 0.8361;
+					m = "YARDAS2";
+              m1= "METROS2";
+           }
+           break;
+ 
+           case 7:
+           {
+           	med *= 0.4047;
+					m = "ACRES";
+              m1= "HECTAREAS";
+           }
+           break;
+ 
+           case 8: med *= 2.59;
+           {
+           	med *= 2.59;
+					m = "MILLAS2";
+              m1= "KILOMETROS2";
+           }
+           break;
+ 
+           default: no(); break;
+ 
+     	}
+ 
+        if(n1 < 0 && n1 > 9)
+        {
+        	printf("\nEl valor Ingresado es incorrecto.");
+           break;
+        }
+        else
+     	{
+           printf("La MEDIDA ");
+ 
+        	if(redondeo(med1))
+           	printf("%.0f", med1);
+           else
+           	printf("%.2f", med1);
+ 
+				printf(" SU CONVERSION DE %s",m1);
+           printf(" A %s",m);
+           printf(" es: ");
+ 
+           if(redondeo(med))
+           	printf("%.0f.", med);
+           else
+           	printf("%.2f.", med);         }
+ 
+     		}
+     break;
+ 
+     case 2:
+		{
+			printf("2) VOLUMEN.\n1.- Pie a metros.\n2.- Yardas a metros.\n3.- Pinta a litros.\n4.- Galon a litros.\n\n");
+	 		printf("Ingrese OPCION 2: ");
+			scanf("%d", &n1);
+        printf("Ingrese MEDIDA: ");
+        scanf("%f", &med);
+        med1 = med;
+ 
+        switch(n1)
+        {
+				case 1:
+           {
+           	med *= 0.02832;
+           	m = "PIE3";
+              m1= "METROS3";
+        	}
+           break;
+ 
+           case 2:
+           {
+           	med *= 0.7646;
+              m = "YARDAS3";
+              m1= "METROS3";
+        	}
+           break;
+ 
+           case 3:
+           {
+           	med *= 0.56826;
+					m = "PINTA";
+              m1= "LITROS";
+           }
+           break;
+ 
+           case 4:
+           {
+           	med *= 6.452;
+					m = "GALON";
+              m1= "LITROS";
+           }
+				break;
+ 
+           default: no(); break;
+        }
+        if(n1 < 0 && n1 > 9)
+        {
+        	printf("\nEl valor Ingresado es incorrecto.");
+           break;
+        }
+        else
+     	{
+           printf("La MEDIDA ");
+ 
+        	if(redondeo(med1))
+           	printf("%.0f", med1);
+           else
+           	printf("%.2f", med1);
+ 
+				printf(" SU CONVERSION DE %s",m1);
+           printf(" A %s",m);
+           printf(" es: ");
+ 
+           if(redondeo(med))
+           	printf("%.0f.", med);
+           else
+           	printf("%.2f.", med);         }
+ 
+		      }
+     break;
+ 
+     case 3:
+     {
+			printf("3)PESO.\n1.- Onza a gramos.\n2.- Libra a kilogramos\n3.- Tonelada inglesa a tonelada.\n\n");
+	 		printf("\nIngrese OPCION 2: ");
+			scanf("%d", &n1);
+        printf("Ingrese MEDIDA: ");
+        scanf("%f", &med);
+        med1 = med;
+        switch(n1)
+        {
+        	case 1:
+           {
+           	med *= 28.35;
+           	m = "ONZA";
+              m1= "GRAMOS";
+        	}
+           break;
+ 
+           case 2:
+           {
+           	med *= 0.45359;
+              m = "LIBRA";
+              m1= "KILOMETROS";
+        	}
+           break;
+ 
+           case 3:
+           {
+           	med *= 1.0160;
+					m = "TONELADAS INGLESAS";
+              m1= "TONELADAS";
+           }
+           break;
+ 
+	      	default: no(); break;
+        }
+ 
+        if(n1 < 0 && n1 > 9)
+        {
+        	printf("\nEl valor Ingresado es incorrecto.");
+           break;
+        }
+        else
+     	{
+           printf("La MEDIDA ");
+ 
+        	if(redondeo(med1))
+           	printf("%.0f", med1);
+           else
+           	printf("%.2f", med1);
+ 
+				printf(" SU CONVERSION DE %s",m1);
+           printf(" A %s",m);
+           printf(" es: ");
+ 
+           if(redondeo(med))
+           	printf("%.0f.", med);
+           else
+           	printf("%.2f.", med);         }
+     	}
+     break;
+ 
+ 		default: no(); break;
+ 
+     }
+ 
+	printf("\n\n");
+ 
+	system("pause");
+}
